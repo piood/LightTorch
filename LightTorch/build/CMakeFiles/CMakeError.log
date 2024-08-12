@@ -1,0 +1,310 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /root/workspace/LightTorch/archive/hw4_extra/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_8beb8/fast && make[1]: Entering directory '/root/workspace/LightTorch/archive/hw4_extra/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_8beb8.dir/build.make CMakeFiles/cmTC_8beb8.dir/build
+make[2]: Entering directory '/root/workspace/LightTorch/archive/hw4_extra/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8beb8.dir/src.c.o
+/usr/bin/cc   -fPIC -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_8beb8.dir/src.c.o   -c /root/workspace/LightTorch/archive/hw4_extra/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_8beb8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8beb8.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_8beb8.dir/src.c.o  -o cmTC_8beb8 
+/usr/bin/ld: CMakeFiles/cmTC_8beb8.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/cmTC_8beb8.dir/build.make:87: cmTC_8beb8] Error 1
+make[2]: Leaving directory '/root/workspace/LightTorch/archive/hw4_extra/build/CMakeFiles/CMakeTmp'
+make[1]: *** [Makefile:121: cmTC_8beb8/fast] Error 2
+make[1]: Leaving directory '/root/workspace/LightTorch/archive/hw4_extra/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /root/workspace/LightTorch/archive/hw4_extra/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_9875b/fast && make[1]: Entering directory '/root/workspace/LightTorch/archive/hw4_extra/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_9875b.dir/build.make CMakeFiles/cmTC_9875b.dir/build
+make[2]: Entering directory '/root/workspace/LightTorch/archive/hw4_extra/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9875b.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_9875b.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_9875b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9875b.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_9875b.dir/CheckFunctionExists.c.o  -o cmTC_9875b  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/cmTC_9875b.dir/build.make:87: cmTC_9875b] Error 1
+make[2]: Leaving directory '/root/workspace/LightTorch/archive/hw4_extra/build/CMakeFiles/CMakeTmp'
+make[1]: *** [Makefile:121: cmTC_9875b/fast] Error 2
+make[1]: Leaving directory '/root/workspace/LightTorch/archive/hw4_extra/build/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_4edcc/fast && make[1]: Entering directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_4edcc.dir/build.make CMakeFiles/cmTC_4edcc.dir/build
+make[2]: Entering directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4edcc.dir/src.c.o
+/usr/bin/cc   -fPIC -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_4edcc.dir/src.c.o   -c /root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_4edcc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4edcc.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_4edcc.dir/src.c.o  -o cmTC_4edcc 
+/usr/bin/ld: CMakeFiles/cmTC_4edcc.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/cmTC_4edcc.dir/build.make:87: cmTC_4edcc] Error 1
+make[2]: Leaving directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+make[1]: *** [Makefile:121: cmTC_4edcc/fast] Error 2
+make[1]: Leaving directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_db307/fast && make[1]: Entering directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_db307.dir/build.make CMakeFiles/cmTC_db307.dir/build
+make[2]: Entering directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_db307.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_db307.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_db307
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_db307.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_db307.dir/CheckFunctionExists.c.o  -o cmTC_db307  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/cmTC_db307.dir/build.make:87: cmTC_db307] Error 1
+make[2]: Leaving directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+make[1]: *** [Makefile:121: cmTC_db307/fast] Error 2
+make[1]: Leaving directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_9f6e9/fast && make[1]: Entering directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_9f6e9.dir/build.make CMakeFiles/cmTC_9f6e9.dir/build
+make[2]: Entering directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9f6e9.dir/src.c.o
+/usr/bin/cc   -fPIC -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_9f6e9.dir/src.c.o   -c /root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_9f6e9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9f6e9.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_9f6e9.dir/src.c.o  -o cmTC_9f6e9 
+/usr/bin/ld: CMakeFiles/cmTC_9f6e9.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/cmTC_9f6e9.dir/build.make:87: cmTC_9f6e9] Error 1
+make[2]: Leaving directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+make[1]: *** [Makefile:121: cmTC_9f6e9/fast] Error 2
+make[1]: Leaving directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_0f98c/fast && make[1]: Entering directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_0f98c.dir/build.make CMakeFiles/cmTC_0f98c.dir/build
+make[2]: Entering directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0f98c.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_0f98c.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_0f98c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0f98c.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_0f98c.dir/CheckFunctionExists.c.o  -o cmTC_0f98c  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/cmTC_0f98c.dir/build.make:87: cmTC_0f98c] Error 1
+make[2]: Leaving directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+make[1]: *** [Makefile:121: cmTC_0f98c/fast] Error 2
+make[1]: Leaving directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_9c97f/fast && make[1]: Entering directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_9c97f.dir/build.make CMakeFiles/cmTC_9c97f.dir/build
+make[2]: Entering directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9c97f.dir/src.c.o
+/usr/bin/cc   -fPIC -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_9c97f.dir/src.c.o   -c /root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_9c97f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9c97f.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_9c97f.dir/src.c.o  -o cmTC_9c97f 
+/usr/bin/ld: CMakeFiles/cmTC_9c97f.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/cmTC_9c97f.dir/build.make:87: cmTC_9c97f] Error 1
+make[2]: Leaving directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+make[1]: *** [Makefile:121: cmTC_9c97f/fast] Error 2
+make[1]: Leaving directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_77340/fast && make[1]: Entering directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_77340.dir/build.make CMakeFiles/cmTC_77340.dir/build
+make[2]: Entering directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_77340.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_77340.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_77340
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_77340.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_77340.dir/CheckFunctionExists.c.o  -o cmTC_77340  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/cmTC_77340.dir/build.make:87: cmTC_77340] Error 1
+make[2]: Leaving directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+make[1]: *** [Makefile:121: cmTC_77340/fast] Error 2
+make[1]: Leaving directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_e7bfe/fast && make[1]: Entering directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_e7bfe.dir/build.make CMakeFiles/cmTC_e7bfe.dir/build
+make[2]: Entering directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e7bfe.dir/src.c.o
+/usr/bin/cc   -fPIC -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_e7bfe.dir/src.c.o   -c /root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_e7bfe
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e7bfe.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_e7bfe.dir/src.c.o  -o cmTC_e7bfe 
+/usr/bin/ld: CMakeFiles/cmTC_e7bfe.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/cmTC_e7bfe.dir/build.make:87: cmTC_e7bfe] Error 1
+make[2]: Leaving directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+make[1]: *** [Makefile:121: cmTC_e7bfe/fast] Error 2
+make[1]: Leaving directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_06ed5/fast && make[1]: Entering directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_06ed5.dir/build.make CMakeFiles/cmTC_06ed5.dir/build
+make[2]: Entering directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_06ed5.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_06ed5.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_06ed5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_06ed5.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_06ed5.dir/CheckFunctionExists.c.o  -o cmTC_06ed5  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/cmTC_06ed5.dir/build.make:87: cmTC_06ed5] Error 1
+make[2]: Leaving directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+make[1]: *** [Makefile:121: cmTC_06ed5/fast] Error 2
+make[1]: Leaving directory '/root/workspace/LightTorch/LightTorch/build/CMakeFiles/CMakeTmp'
+
+
+

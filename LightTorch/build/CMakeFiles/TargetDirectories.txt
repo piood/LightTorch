@@ -1,0 +1,4 @@
+/root/workspace/LightTorch/LightTorch/build/CMakeFiles/rebuild_cache.dir
+/root/workspace/LightTorch/LightTorch/build/CMakeFiles/edit_cache.dir
+/root/workspace/LightTorch/LightTorch/build/CMakeFiles/ndarray_backend_cuda.dir
+/root/workspace/LightTorch/LightTorch/build/CMakeFiles/ndarray_backend_cpu.dir
