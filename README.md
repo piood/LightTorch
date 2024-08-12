@@ -32,7 +32,7 @@ train_cifar10(model, dataloader, n_epochs=50, optimizer=ltorch.optim.Adam,
       lr=0.001, weight_decay=0.001) #训练模型
 evaluate_cifar10(model, dataloader) #评估模型
 ```
-[示例文件](https://github.com/piood/LightTorch/LightTorch/python/ltorch/resnet9.ipynb)
+[示例文件](https://github.com/piood/LightTorch/blob/main/LightTorch/python/ltorch/resnet9.ipynb)
 
 参考：
 - [Pytorch](https://github.com/pytorch/pytorch)
