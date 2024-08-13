@@ -35,8 +35,8 @@ n_epochs=50
 optimizer=ltorch.optim.Adam
 lr=0.001
 weight_decay=0.001
-
 opt = optimizer(model.parameters(), lr=lr, weight_decay=weight_decay)
+
 for epoch in range(n_epochs):
     correct, total_loss = 0, 0
     device = model.device
