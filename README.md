@@ -20,17 +20,40 @@ make #编译C++，CUDA代码
 import ltorch #导入ltorch
 from ltorch.apps.models import ResNet9
 from ltorch.apps.simple_ml import train_cifar10, evaluate_cifar10
+import numpy as np
 
-device = ltorch.cuda() #使用GPU加速
+device = ltorch.cuda() #GPU加速
 dataset = ltorch.data.CIFAR10Dataset("ltorch_data/cifar-10-batches-py", train=True)
 dataloader = ltorch.data.DataLoader(
          dataset=dataset,
          batch_size=256,
-         shuffle=True,)
-model = ResNet9(device=device, dtype="float32") #创建模型
-train_cifar10(model, dataloader, n_epochs=50, optimizer=ltorch.optim.Adam,
-      lr=0.001, weight_decay=0.001) #训练模型
-evaluate_cifar10(model, dataloader) #评估模型
+         shuffle=True, device=device)
+model = ResNet9(device=device, dtype="float32")
+
+loss_fn = ltorch.nn.SoftmaxLoss()
+n_epochs=50
+optimizer=ltorch.optim.Adam
+lr=0.001
+weight_decay=0.001
+
+opt = optimizer(model.parameters(), lr=lr, weight_decay=weight_decay)
+for epoch in range(n_epochs):
+    correct, total_loss = 0, 0
+    device = model.device
+    model.train()
+    for batch in dataloader:
+        opt.reset_grad()
+        X, y = batch
+        X, y = ltorch.Tensor(X, device=device), ltorch.Tensor(y, device=device)
+        out = model(X)
+        loss = loss_fn(out, y)
+        loss.backward()
+        opt.step()
+        correct += np.sum(np.argmax(out.numpy(), axis=1) == y.numpy())
+        total_loss += loss.data.numpy() * y.shape[0]
+    sample_nums = len(dataloader.dataset)
+    avg_acc, avg_loss =  correct / sample_nums, total_loss / sample_nums
+    print(f"Epoch: {epoch}, Acc: {avg_acc}, Loss: {avg_loss}")
 ```
 [示例文件](https://github.com/piood/LightTorch/blob/main/LightTorch/python/ltorch/resnet9.ipynb)
 
